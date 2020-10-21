@@ -1,0 +1,15 @@
+name: ScenarioGen
+main: com.laurel.ScenarioGen.Main
+version: 0.1 (alpha)
+commands:
+    scenariogen:
+        description: Changes the current scenario state.
+        usage: /<command>
+permissions:
+    scenariogen.*:
+        description: Controls for the scenariogen plugin.
+        children:
+            scenariogen.scenariogen: true
+    scenariogen.scenariogen:
+            description: Lets a user change the current scenario state.
+            default: op
