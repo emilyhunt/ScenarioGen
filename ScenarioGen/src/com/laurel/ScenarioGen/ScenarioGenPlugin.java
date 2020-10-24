@@ -5,21 +5,22 @@ import org.bukkit.command.CommandSender;
 import org.bukkit.entity.Player;
 import org.bukkit.plugin.java.JavaPlugin;
 
+import com.laurel.BackstagecraftOne.Listeners;
 import com.laurel.BackstagecraftOne.State0;
 import com.laurel.BackstagecraftOne.State1;
 import com.laurel.BackstagecraftOne.State2;
 import com.laurel.BackstagecraftOne.State3;
 import com.laurel.BackstagecraftOne.State4;
 import com.laurel.BackstagecraftOne.State5;
-import com.laurel.BackstagecraftOne.State6;
 import com.laurel.BackstagecraftOne.State9;
 
 
-public class Main extends JavaPlugin {
+public class ScenarioGenPlugin extends JavaPlugin {
 	
 	/* Plugin variables */
 	static int scenarioLevel = 0;
-	ScenarioState currentScenario;
+	private ScenarioState currentScenario;
+	private Listeners listeners = new Listeners(this);
 	
 	
 	/* Boilerplate functions */
@@ -108,58 +109,58 @@ public class Main extends JavaPlugin {
 			switch (nextScenarioLevel) {
 			
 			case 0:
-				currentScenario.disable(player);
+				currentScenario.disable(player, listeners);
 				currentScenario = new State0();
-				currentScenario.enable(player);
+				currentScenario.enable(player, listeners);
 				scenarioLevel = 0;
 				return true;
 				
 			case 1:
-				currentScenario.disable(player);
+				currentScenario.disable(player, listeners);
 				currentScenario = new State1();
-				currentScenario.enable(player);
+				currentScenario.enable(player, listeners);
 				scenarioLevel = 1;
 				return true;
 				
 			case 2:
-				currentScenario.disable(player);
+				currentScenario.disable(player, listeners);
 				currentScenario = new State2();
-				currentScenario.enable(player);
+				currentScenario.enable(player, listeners);
 				scenarioLevel = 2;
 				return true;
 				
 			case 3:
-				currentScenario.disable(player);
+				currentScenario.disable(player, listeners);
 				currentScenario = new State3();
-				currentScenario.enable(player);
+				currentScenario.enable(player, listeners);
 				scenarioLevel = 3;
 				return true;
 				
 			case 4:
-				currentScenario.disable(player);
+				currentScenario.disable(player, listeners);
 				currentScenario = new State4();
-				currentScenario.enable(player);
+				currentScenario.enable(player, listeners);
 				scenarioLevel = 4;
 				return true;
 				
 			case 5:
-				currentScenario.disable(player);
+				currentScenario.disable(player, listeners);
 				currentScenario = new State5();
-				currentScenario.enable(player);
+				currentScenario.enable(player, listeners);
 				scenarioLevel = 5;
 				return true;
 				
-			case 6:
-				currentScenario.disable(player);
-				currentScenario = new State6();
-				currentScenario.enable(player);
-				scenarioLevel = 6;
-				return true;
+//			case 6:
+//				currentScenario.disable(player, listeners);
+//				currentScenario = new State6();
+//				currentScenario.enable(player, listeners);
+//				scenarioLevel = 6;
+//				return true;
 				
 			case 9:
-				currentScenario.disable(player);
+				currentScenario.disable(player, listeners);
 				currentScenario = new State9();
-				currentScenario.enable(player);
+				currentScenario.enable(player, listeners);
 				scenarioLevel = 9;
 				return true;
 				

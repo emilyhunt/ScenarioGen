@@ -1,5 +1,5 @@
 name: ScenarioGen
-main: com.laurel.ScenarioGen.Main
+main: com.laurel.ScenarioGen.ScenarioGenPlugin
 version: 0.1 (alpha)
 commands:
     scenariogen:
